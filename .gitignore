@@ -1,0 +1,35 @@
+.vscode
+__pycache__
+*.pyc
+Images.py
+/Images.py
+/.idea/inspectionProfiles/profiles_settings.xml
+/.idea/MasterTool Test Automation.iml
+/.idea/misc.xml
+/.idea/modules.xml
+/.idea/vcs.xml
+/.idea/workspace.xml
+/.idea/workspace.xml
+/MasterTool
+codegenerator/image_frequency_list.txt
+/codegenerator/image_frequency_list.txt
+codegenerator/image_frequency_list.txt
+setting.json
+/projects_to_test/Projetos de Teste/toModify/*
+/projects_to_test/conversion_test/*
+/projects_to_test/Library/*
+/projects_to_test/mastertool/toModify/*
+/projects_to_test/bcstools/toModify/*
+/projects_to_test/NX3030/*
+/projects_to_test/NX3003/*
+/projects_to_test/NX3004/*
+/projects_to_test/NX3005/*
+/projects_to_test/NX3010/*
+/projects_to_test/NX3020/*
+/projects_to_test/NX3030/*
+/projects_to_test/NX3035/*
+/projects_to_test/NX5101/*
+/projects_to_test/NX5001/*
+/codegenerator/*.txt
+/codegenerator/image_frequency_list.txt
+/codegenerator/image_frequency_list.txt
