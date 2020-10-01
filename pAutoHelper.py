@@ -1,12 +1,17 @@
 from concurrent.futures.process import ProcessPoolExecutor
 import multiprocessing as multi
 import pyautogui as auto
+
 import ImageFrequencyOptimization as ImgFreqOptimize
 
 
 def _p_finder(image, region, sender):
     try:
-        res = auto.locateOnScreen(image, region=region)
+        res = auto.locateOnScreen(
+            image,
+            region=region,
+            grayscale=True,
+            confidence=0.8)
         if res != None:
             try:
                 # exception might be raised because connection is closed

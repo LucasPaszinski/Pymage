@@ -5,6 +5,7 @@ import codegenerator.ImageFrequencyOptimization as ImgFreqOptimize
 import time
 from Screenshot import screenshot
 
+
 def GetWindowBox(name):
     '''
 -----
@@ -51,7 +52,11 @@ Return:
     """
 
     def SearchImage(img, region):
-        find = auto.locateOnScreen(img, region=region, grayscale=True)
+        find = auto.locateOnScreen(
+            img,
+            region=region,
+            grayscale=True,
+            confidence=0.8)
         if find is not None:
             ImgFreqOptimize.AddHitFor(img)
             print(f'*** The Image {img} was Found ***\t\t\t\t')
@@ -142,14 +147,16 @@ Return:
 
     '''
     for img in images:
-        find = auto.locateOnScreen(img, region=region, grayscale=True)
+        find = auto.locateOnScreen(
+            img,
+            grayscale=True,
+            confidence=0.8)
         if find is not None:
             return img
     raise Exception('None of the following images were found:\n {}'
                     .format(images))
 
 
-    
 if __name__ == "__main__":
     auto.sleep(3)
     from Images import Pymage
