@@ -2,8 +2,6 @@ from concurrent.futures.process import ProcessPoolExecutor
 import multiprocessing as multi
 import pyautogui as auto
 
-import ImageFrequencyOptimization as ImgFreqOptimize
-
 
 def _p_finder(image, region, sender):
     try:
@@ -19,7 +17,7 @@ def _p_finder(image, region, sender):
                 sender.close()
             except:
                 pass
-            ImgFreqOptimize.AddHitFor(image)
+            AddHitFor(image)
             # print(f'*** The Image {image} was Found ***\t\t\t\t')
     except:
         return [True, None]
@@ -111,3 +109,10 @@ def parallel_findall(images, max_cores_threads=4):
 
     except:
         return list()
+
+def AddHitFor(image):
+    '''Write on a image frequency file onde a image is found'''
+    if not (str.isspace(image) or image == None):
+        image_freq_list = open('codegenerator/image_frequency_list.txt',"a")
+        image_freq_list.write(image+"\n")
+        image_freq_list.close()

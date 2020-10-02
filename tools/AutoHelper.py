@@ -1,9 +1,10 @@
 import pyautogui as auto
-import pAutoHelper as p_auto
-from pAutoHelper import parallel_findall as findall
 import codegenerator.ImageFrequencyOptimization as ImgFreqOptimize
 import time
-from Screenshot import screenshot
+import tools.pAutoHelper as helper
+from tools.pAutoHelper import parallel_finder as pfinder
+from tools.pAutoHelper import parallel_findall as findall
+from tools.Screenshot import screenshot
 
 
 def GetWindowBox(name):
@@ -64,7 +65,7 @@ Return:
 
     isMultipleImages = isinstance(images, (list, tuple))
     if isMultipleImages:
-        find = p_auto.parallel_finder(images, region, max_cores_threads=4)
+        find = pfinder(images, region, max_cores_threads=4)
         if find == [True, None]:
             for image in images:
                 find = SearchImage(image, region)
@@ -155,7 +156,6 @@ Return:
             return img
     raise Exception('None of the following images were found:\n {}'
                     .format(images))
-
 
 if __name__ == "__main__":
     auto.sleep(3)

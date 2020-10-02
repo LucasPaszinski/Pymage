@@ -1,7 +1,6 @@
 import pyautogui as auto 
-import AutoHelper as helper
-import pyscreeze
-from Images import Img, Pymage
+import tools.AutoHelper as helper
+from tools.Images import Img, Pymage
 
 
 def WaitImageThenClick(imgs):
